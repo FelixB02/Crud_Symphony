@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %} 
+{% block stylesheets %}
+<style>
+    .container {
+        width: 45%!important;
+        background-color: #EDEFEF;
+        margin: auto;
+        margin-top: 1rem;
+    }
+
+    .page-header {
+        text-align: center;
+        padding-top: 1rem;
+    }
+
+    .inputs {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #todo {
+        width: 350px;
+    }
+
+    .mybtn {
+        margin: 0 auto;
+        display: block !important;
+    }
+</style>
+{% endblock %}
+{% block body %}
+<div class="container">
+    <h2 class="page-header">Add Student</h2> <br>
+    <div class="inputs">
+        {{form_start(form)}}
+        {{form_widget(form)}}
+        {{form_end(form)}}
+    </div>
+</div>
+{% endblock %}

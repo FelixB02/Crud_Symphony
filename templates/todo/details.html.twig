@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %} 
+{% block stylesheets %}
+<style>
+    .mycard {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+        background-color: #EDEFEF;
+        padding: 2rem 0;
+        width: 60% !important;
+    }
+</style>
+{% endblock %}
+{% block body %}
+<div class="container">
+<div class="card mycard" style="width: 45rem;">
+    <img src="{{asset("uploads/" ~ todo.picture)}}" class="card-img-top" alt="{{todo.name}}">
+    <div class="card-body">
+      <h5 class="card-title">{{todo.name}}</h5>
+      <p class="card-text">Age: {{todo.age}}</p>
+      <p class="card-text">Skills: {{todo.skills}}</p>
+      <p class="card-text">IQ: {{todo.iq}}</p>
+      <p class="card-text">Alias: {{todo.alias}}</p>
+      <p class="card-text">Average Grade: {{grades.avgGrade}}</p>
+      <a href="/" class="btn btn-outline-danger">Back</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

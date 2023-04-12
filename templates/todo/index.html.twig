@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %} {% block stylesheets %}
+<style>
+    .tablevertical {
+        vertical-align: middle;
+    }
+
+    .page-header {
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    .hello1 {
+        background-color: #71A92C !important;
+        border: 1px solid #71A92C !important;
+    }
+</style>
+{% endblock %} {% block body %}
+
+
+{% for message in app.flashes('notice') %}
+   <div id="myalert" class="alert alert-success alert-dismissible fade show">
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+   </div>
+{% endfor %}
+
+{% for message in app.flashes('notice2') %}
+   <div id="myaltert2" class="alert alert-danger alert-dismissible fade show">
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+   </div>
+{% endfor %}
+
+<div class="container">
+    <h2 class="page-header"> Codefactory Students </h2>
+    <hr>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th> Student Picture</th>
+                <th>Student Name</th>
+                <th>Student Skills</th>
+                <th>Student Age</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        {% for todo in todos %}
+        <tbody>
+            <tr>
+                <td class="tablevertical"> <a href="/details/{{todo.id}}"><img height="120px" width="160px" src="{{asset("uploads/" ~ todo.picture)}}" alt=""></a></td>
+                <td class="tablevertical">{{todo.name}}</td>
+                <td class="tablevertical">{{todo.Skills}}</td>
+                <td class="tablevertical">{{todo.Age}}</td>
+                <td class="tablevertical">
+                    <a href="/details/{{todo.id}}" class="btn btn-outline-success me-3">View</a>
+                    <a href="/edit/{{todo.id}}" class="btn btn-outline-dark mybtn me-3">Edit</a>
+                    <button onclick="deleteStudent('{{todo.id}}')" class="btn btn-outline-danger me-3">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
+{% block javascripts %}
+    <script src='{{asset("Javascript/deleteSwal.js")}}''></script>
+{% endblock %}
