@@ -1,7 +1,9 @@
-{% extends 'base.html.twig' %} 
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
 {% block stylesheets %}
 <style>
-    .containe {
+    .cont {
         max-width: 430px;
         background-color: #EDEFEF;
         margin: auto;
@@ -30,12 +32,12 @@
 </style>
 {% endblock %}
 {% block body %}
-<div class="containe">
-    <h2 class="page-header">Add Student</h2> <br>
-    <div class="inputs">
-        {{form_start(form)}}
-        {{form_widget(form)}}
-        {{form_end(form)}}
+    <div class="cont">
+        <h2 class="page-header">Register</h2>
+        <div class="inputs">
+        {{ form_start(registrationForm) }}
+        {{form_widget(registrationForm)}}
+        {{ form_end(registrationForm) }}
+        </div>
     </div>
-</div>
 {% endblock %}

@@ -1,0 +1,55 @@
+.admininfo {
+    height: 25vh;
+    background-color: #EDEFEF;
+    display: grid;
+    grid-template-columns: 1.6fr 1.6fr 7.2fr 1.6fr;
+}
+
+
+.user {
+    background-color: #EDEFEF;
+    margin: 0.7rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.info1 {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.info2 {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+}
+
+#counter {
+    margin-left: 1rem;
+}
+
+#portrait {
+    border-radius: 50%;
+}
+
+.cont {
+    width: 99%;
+    margin-right: 1rem;
+    display: grid;
+    grid-template-columns: 1.6fr 10.4fr;
+    margin-top: 2rem;
+}
+
+.user2 {
+    background-color: #EDEFEF;
+    margin: 0.7rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    width: 11.7vw;
+    height: 60vh;
+}

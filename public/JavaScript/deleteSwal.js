@@ -22,7 +22,7 @@ function deleteStudent(id) {
             'Student has been deleted.',
             'success',
             setTimeout(function(){
-                window.location.href = '/delete/' + id
+                window.location.href = '/admin/delete/' + id
             }, 1300)
           )
         } else if (

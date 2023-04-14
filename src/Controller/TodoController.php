@@ -11,14 +11,17 @@ use App\Form\TodoType;
 use Symfony\Component\HttpFoundation\Request;
 use App\Service\FileUploader;
 
+#[Route('/admin')]
+
 class TodoController extends AbstractController
 {
     #[Route('/', name: 'todo')]
     public function index(ManagerRegistry $doctrine): Response
     {
         $todos = $doctrine->getRepository(Todo::class)->findAll();
-
-        return $this->render('todo/index.html.twig', ['todos' => $todos]);
+        $length = count($todos);
+        $user = $this->getUser();
+        return $this->render('todo/index.html.twig', ['todos' => $todos, "user"=> $user,"length" => $length]);
     }
   
     #[Route('/create', name: 'todo_create')]

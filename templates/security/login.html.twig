@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+{% block stylesheets %}
+<style>
+    .cont {
+        max-width: 430px;
+        background-color: #EDEFEF;
+        margin: auto;
+        margin-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .page-header {
+        text-align: center;
+        padding-top: 1rem;
+    }
+
+    .inputs {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #todo {
+        width: 350px;
+    }
+
+    .mybtn {
+        margin: 0 auto;
+        display: block !important;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+{% if error %}
+<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+<div class="cont">
+    <form method="post">
+        <div class="container">
+        <h1 class="h3 mb-3 font-weight-normal page-header">Please sign in</h1>
+        <label for="inputEmail">Email</label>
+        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+        <label for="inputPassword">Password</label>
+        <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+
+        <input type="hidden" name="_csrf_token"
+            value="{{ csrf_token('authenticate') }}">
+
+        <button class="mybtn btn btn-outline-success mt-3 mb-3" type="submit">
+            Sign in
+        </button>
+        </div>
+    </form>
+</div>
+{% endblock %}
